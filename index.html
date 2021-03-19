@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Random Number Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <form name="form">
+      <h1 style="font-size: 100px; margin-bottom: 5px; font-family: roboto">
+        Jonah's
+      </h1>
+
+      <h1 style="margin-top: 5px; font-family: roboto">
+        Random Number Generator
+      </h1>
+
+      <h4 style="font-size: 40px; margin-bottom: 5px; margin-top: 5px">
+        Set Range
+      </h4>
+
+      <p>
+        Input the minimum and maximum number you want to be generated. <br />
+        Be sure to make your maximum number greater than or equal to your
+        minimum number. <br />
+        Only whole numbers are supported.
+      </p>
+      <!-- User input for the minimum. -->
+      <label for="min" name="min">Minimum</label>
+      <input type="number" id="min" name="min" value="0" required />
+      <br /><br />
+      <!--User input for the maximum. -->
+      <label for="max" name="max">Maximum</label>
+      <input type="number" id="max" name="max" value="10" required />
+
+      <br /><br />
+      <hr />
+      <br />
+
+      <!--Output the randomly generated number.-->
+      <input type="button" value="Generate Number" onclick="Random()" />
+      <input type="text" id="tb" name="tb" readonly />
+    </form>
+
+    <br />
+    <hr />
+    <br />
+
+    <!--Button that tells the user if the number is even or odd.-->
+    <h4 style="font-size: 20px; margin-bottom: 5px; margin-top: 5px">
+      Click to see if the number is even or odd.
+    </h4>
+    <input type="button" value="Even or Odd" onclick="evenodd()" />
+    <input type="text" id="eo" name="eo" readonly />
+
+    <br />
+    <br />
+    <hr />
+    <br />
+
+    <!--Button that tells the user if the number is prime or composite.-->
+    <h4 style="font-size: 20px; margin-bottom: 5px; margin-top: 5px">
+      Click to see if the number is Prime or Composite.
+    </h4>
+    <p style="font-size: 12px">
+      This feature does not support negative numbers.
+    </p>
+    <input type="button" value="Click" onclick="prime()" />
+    <input type="text" id="pc" name="pc" readonly />
+
+    <br />
+    <br />
+    <hr />
+    <br />
+
+    <!--Button that tells the user the number's factors.-->
+    <h4 style="font-size: 20px; margin-bottom: 5px; margin-top: 5px">
+      Click to see the number's factors.
+    </h4>
+    <p style="font-size: 12px">
+      This feature does not support negative numbers.
+    </p>
+    <input type="button" value="Factors" onclick="factor()" />
+
+    <br /><br />
+
+    <textarea
+      form="form"
+      id="fac"
+      name="fac"
+      cols="50"
+      rows="5"
+      readonly
+    ></textarea>
+
+    <br />
+    <br />
+    <hr />
+    <br />
+
+    <!--Button that tells the user the number's prime factorization.-->
+    <h4 style="font-size: 20px; margin-bottom: 5px; margin-top: 5px">
+      Click to see the number's prime factorization.
+    </h4>
+    <p style="font-size: 12px">
+      This feature does not support negative numbers.
+    </p>
+    <input type="button" value="Prime Factorization" onclick="pfactorize()" />
+
+    <br /><br />
+
+    <textarea
+      form="form"
+      id="pfac"
+      name="pfac"
+      cols="50"
+      rows="5"
+      readonly
+    ></textarea>
+
+    <br />
+    <br />
+    <hr />
+    <br />
+
+    <h4 style="font-size: 20px; margin-bottom: 5px; margin-top: 5px">
+      Click to see the number's next 100 multiples.
+    </h4>
+    <p style="font-size: 12px">
+      This feature does not support negative numbers.
+    </p>
+    <input type="button" value="Multiples" onclick="multiples()" />
+
+    <br /><br />
+
+    <textarea
+      form="form"
+      id="mul"
+      name="mul"
+      cols="100"
+      rows="5"
+      readonly
+    ></textarea>
+
+    <br />
+    <br />
+    <hr />
+    <br />
+
+    <h4 style="font-size: 20px; margin-bottom: 5px; margin-top: 5px">
+      Click to see Goldman's Conjecture for this number.
+    </h4>
+    <p style="font-size: 12px">
+      Goldbach's conjecture is one of the oldest and best-known unsolved
+      problems in number theory and all of mathematics. <br />
+      It states that every even whole number greater than 2 is the sum of two
+      prime numbers.
+    </p>
+    <input type="button" value="Click" onclick="Goldbach()" />
+
+    <br /><br />
+
+    <textarea
+      form="form"
+      id="gc"
+      name="gc"
+      cols="100"
+      rows="5"
+      readonly
+    ></textarea>
+
+    <br />
+    <br />
+    <hr />
+    <br />
+
+    <h2 style="margin-top: 5px; font-family: roboto">Items between a range</h2>
+
+    <label for="min2" name="min2">Minimum</label>
+    <input type="number" id="min2" name="min2" value="1" required />
+
+    <br /><br />
+
+    <label for="max2" name="max2">Maximum</label>
+    <input type="number" id="max2" name="max2" value="100" required />
+
+    <br /><br />
+    <hr />
+    <br />
+
+    <h4>Twin Primes</h4>
+    <p>
+      A twin prime is a prime number that is either 2 less or 2 more than
+      another prime number for example, either member of the twin prime pair
+      (41, 43). <br />
+      In other words, a twin prime is a prime that has a prime gap of two.
+      <br />
+      Sometimes the term twin prime is used for a pair of twin primes; an
+      alternative name for this is prime twin or prime pair.
+    </p>
+
+    <input type="button" value="Find twin primes" onclick="twinPrimes()" />
+
+    <br /><br />
+
+    <textarea
+      form="form"
+      id="t1"
+      name="t1"
+      cols="150"
+      rows="25"
+      readonly
+    ></textarea>
+
+    <br /><br />
+    <hr />
+    <br />
+
+    <h4>Primes</h4>
+
+    <br />
+
+    <input type="button" value="Find Primes" onclick="primeRange()" />
+
+    <br /><br />
+
+    <textarea
+      form="form"
+      id="pr"
+      name="pr"
+      cols="150"
+      rows="25"
+      readonly
+    ></textarea>
+
+    <script type="text/javascript" src="./main.js"></script>
+  </body>
+</html>

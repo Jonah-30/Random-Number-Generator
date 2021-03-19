@@ -1,0 +1,27 @@
+body {
+  font-size: 15px;
+  font-family: roboto, times-new-roman, sans-serif;
+  text-align: left;
+  color: black;
+  background-color: #0fbcff;
+}
+
+h1 {
+  font-size: 75px;
+  color: black;
+  text-align: center;
+}
+
+h2 {
+  font-size: 50px;
+  color: black;
+  text-align: center;
+  font-family: times-new-roman;
+}
+
+h4 {
+  font-family: roboto;
+  font-size: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
